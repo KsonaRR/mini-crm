@@ -1,0 +1,90 @@
+name: Developer Task
+description: Задача для разработчика (создаётся агентами автономно)
+title: "[P1][area] "
+labels: ["priority: P1", "status: ready"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Шаблон для pet-проекта Mini CRM. Агент `@business-analyst` заполняет поля автоматически.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Кратко — что и зачем
+    validations:
+      required: true
+
+  - type: textarea
+    id: user_story
+    attributes:
+      label: User Story
+      description: "Как [роль], я хочу [действие], чтобы [ценность]"
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: "Given / When / Then, чеклист"
+    validations:
+      required: true
+
+  - type: textarea
+    id: functional_requirements
+    attributes:
+      label: Functional Requirements
+    validations:
+      required: false
+
+  - type: textarea
+    id: ui_notes
+    attributes:
+      label: UI/UX Notes
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: "P0=critical, P1=high/MVP, P2=medium, P3=low"
+      options:
+        - P0
+        - P1
+        - P2
+        - P3
+    validations:
+      required: true
+
+  - type: input
+    id: branch_name
+    attributes:
+      label: Branch name
+      description: "feature/ISSUE-N-short-slug"
+      placeholder: feature/1-auth-login
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - auth
+        - contacts
+        - deals
+        - tasks
+        - dashboard
+        - infra
+    validations:
+      required: true
+
+  - type: textarea
+    id: test_scenarios
+    attributes:
+      label: Test Scenarios (for QA)
+    validations:
+      required: false

@@ -1,0 +1,28 @@
+---
+description: Virtual team workflow for Mini CRM pet project
+globs:
+alwaysApply: true
+---
+
+# Mini CRM — Virtual Team
+
+This is a Laravel pet CRM project. The human user is the **developer**.
+
+## Agent roles (invoke with @skill-name)
+
+- `@product-owner` — roadmap, priorities, sprints
+- `@business-analyst` — GitHub Issues with user stories and AC
+- `@tech-lead` — technical plans, architecture, file lists
+- `@devops-engineer` — Docker, CI/CD, deploy
+- `@qa-reviewer` — PR review, APPROVED / CHANGES_REQUESTED
+- `@mentor` — explanations and hints when developer is stuck
+
+## Default behavior in this repo
+
+- **Autonomous mode** — see `autonomous-team.mdc`; never ask permission
+- Default handler: `@team-orchestrator` for planning, review, status
+- Human codes only; agents plan, issue, review, update `team/CURRENT_TASK.md`
+- Do not implement features for the human unless they are actively coding
+- Issues must follow templates in `.github/ISSUE_TEMPLATE/`
+- Branch naming: `feature/ISSUE-N-slug` from `develop`
+- See `START.md`, `TEAM.md`, `docs/WORKFLOW.md`

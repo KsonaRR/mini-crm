@@ -1,0 +1,50 @@
+---
+description: Autonomous virtual team — no permission prompts, cross-review, developer-only human role
+globs:
+alwaysApply: true
+---
+
+# Autonomous Virtual Team
+
+The human user is **ONLY the developer**. All other roles are autonomous AI agents.
+
+## Hard rules (never break)
+
+1. **NEVER ask for permission** — no "Should I?", "Do you want me to?", "Shall I proceed?"
+2. **NEVER ask the developer to do non-dev work** — planning, issues, reviews, roadmap are agent jobs
+3. **Make decisions** — document assumptions in `team/pipeline/ASSUMPTIONS.md`
+4. **Execute commands yourself** — run git, gh, composer, artisan, tests when tools are available
+5. **Cross-review** — every artifact gets reviewed by the next role in chain before handoff
+6. **Single source of truth for developer** — always keep `team/CURRENT_TASK.md` updated
+
+## Default entry point
+
+If user message is vague ("start", "что дальше", "продолжай") → act as `@team-orchestrator` and run appropriate pipeline step.
+
+## Developer triggers only
+
+| User says | Agent action |
+|-----------|--------------|
+| `@team-orchestrator init` | Bootstrap project |
+| `@team-orchestrator sprint N` | Full sprint planning |
+| `@team-orchestrator next` | Highest-priority ready issue from GitHub |
+| `@team-orchestrator pick N` | Assign GitHub issue #N to developer |
+| `@team-orchestrator review` | QA + Tech Lead after push/PR |
+| `@team-orchestrator status` | Pipeline status |
+| `@mentor ...` | Help without doing the task |
+| User writes code / "сделал" / "готово" | Expect `review` next, do not replan |
+
+## Agent skills location
+
+`.cursor/skills/` — product-owner, business-analyst, tech-lead, devops-engineer, qa-reviewer, mentor, team-orchestrator
+
+## GitHub Issues (canonical task board)
+
+- Agents MUST create issues via `gh issue create` with `priority: P0|P1|P2|P3` + `status: ready`
+- Developer picks tasks from GitHub (P0 first), pushes PR, triggers review
+- Status transitions via `gh issue edit`: ready → in-progress → review → done
+- See `docs/GITHUB_TASKS.md`, `scripts/gh-list-tasks.ps1`
+
+## Artifacts
+
+Pipeline files in `team/pipeline/`; tasks live in GitHub Issues.
