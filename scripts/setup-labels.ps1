@@ -7,10 +7,10 @@ if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
 }
 
 $labels = @(
-    @{ name = "priority: P0"; color = "B60205"; description = "Critical — do first" },
-    @{ name = "priority: P1"; color = "D93F0B"; description = "High — MVP" },
+    @{ name = "priority: P0"; color = "B60205"; description = "Critical - do first" },
+    @{ name = "priority: P1"; color = "D93F0B"; description = "High - MVP" },
     @{ name = "priority: P2"; color = "FBCA04"; description = "Medium" },
-    @{ name = "priority: P3"; color = "C5DEF5"; description = "Low — backlog" },
+    @{ name = "priority: P3"; color = "C5DEF5"; description = "Low - backlog" },
     @{ name = "type: feature"; color = "1D76DB"; description = "New feature" },
     @{ name = "type: bug"; color = "D73A4A"; description = "Bug fix" },
     @{ name = "type: chore"; color = "FEF2C0"; description = "Maintenance" },
