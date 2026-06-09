@@ -45,5 +45,16 @@ jobs:
           echo "DB_USERNAME=root" >> .env
           echo "DB_PASSWORD=password" >> .env
 
+            - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Build frontend
+        run: |
+          npm ci
+          npm run build
+
       - name: Run tests
         run: php artisan test
