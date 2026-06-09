@@ -63,3 +63,8 @@ git push -u origin develop
 - SQLite (dev) / MySQL (prod)
 - GitHub Issues + Actions
 - Notion — roadmap
+
+
+## CI
+
+![CI](https://github.com/KsonaRR/mini-crm/actions/workflows/ci.yml/badge.svg)
