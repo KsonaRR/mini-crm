@@ -67,4 +67,4 @@ git push -u origin develop
 
 ## CI
 
--![CI](https://github.com/KsonaRR/mini-crm/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/KsonaRR/mini-crm/actions/workflows/ci.yml/badge.svg)
